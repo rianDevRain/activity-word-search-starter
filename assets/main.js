@@ -7,10 +7,20 @@
 
 // TODO 1: Use querySelector to assign EACH of the above 
 // elements to a variable, just like this:
-let searchButton = document.querySelector('#search-button')
+let text = document.querySelector('#textbox');
+let searchButton = document.querySelector('#search-button');
+let sentence = document.querySelector('#sentence');
+let searchResults = document.querySelector('#search-results');
 
+
+let sc = sentence.innerText;
 searchButton.addEventListener('click', function () {
- 
+  if (sentence.innerText.includes(text.value)){
+    searchResults.innerHTML ='match'
+  } else {
+    searchResults.innerHTML ='nomatch'
+  }
+
   // TODO 2: Write an IF statement which determines whether
   // the user-supplied string from #textbox is included in
   // the #sentence string.
